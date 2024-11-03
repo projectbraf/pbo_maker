@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Test PBO Maker action
         uses: ./
         with:
-          who-to-greet: 'World'
+          message: 'Hello World!'

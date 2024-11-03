@@ -6,5 +6,10 @@ runs:
   steps:
     - name: Install Mikero Tools
       run: |
-        echo "Hello World!"
+        echo "${{ inputs.message }}"
       shell: pwsh
+
+inputs:
+  message:
+    description: "Message to greet"
+    required: true
