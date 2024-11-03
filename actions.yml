@@ -1,0 +1,16 @@
+name: "PBO Maker"
+description: "Action to pack PBOs on self hosted windows runners"
+
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+
+outputs:
+  time:
+    description: 'The time we greeted you'
+
+run: |
+  echo "Hello ${{ inputs.who-to-greet }}!"
+  echo "::set-output name=time::$(date)"
