@@ -7,10 +7,10 @@ inputs:
     required: true
     default: 'World'
 
-outputs:
-  time:
-    description: 'The time we greeted you'
-
-run: |
-  echo "Hello ${{ inputs.who-to-greet }}!"
-  echo "::set-output name=time::$(date)"
+runs:
+  using: composite
+  steps:
+    - name: Install Mikero Tools
+      run: |
+        echo "Hello ${{ inputs.who-to-greet }}!"
+      shell: pwsh
