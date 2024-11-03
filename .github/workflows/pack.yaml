@@ -1,12 +1,11 @@
 name: Test PBO Maker actions
 on:
+  pull_request:
   push:
-    branches:
-      - main
 
 jobs:
-  notify:
-    runs-on: windows
+  pack:
+    runs-on: windows-latest
 
     steps:
       - name: Test PBO Maker action
