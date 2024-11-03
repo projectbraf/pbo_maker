@@ -9,10 +9,7 @@ jobs:
     runs-on: windows
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
       - name: Test PBO Maker action
         uses: ./
+        with:
+          who-to-greet: 'World'
