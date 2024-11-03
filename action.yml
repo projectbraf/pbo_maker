@@ -1,16 +1,11 @@
 name: "PBO Maker"
 description: "Action to pack PBOs on self hosted windows runners"
 
-inputs:
-  who-to-greet:
-    description: 'Who to greet'
-    required: true
-    default: 'World'
 
 runs:
   using: composite
   steps:
     - name: Install Mikero Tools
       run: |
-        echo "Hello ${{ inputs.who-to-greet }}!"
+        echo "Hello World!"
       shell: pwsh
