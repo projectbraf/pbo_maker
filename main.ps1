@@ -7,6 +7,9 @@ Write-Output "Private Key -> $private_key"
 Write-Output "Project Name -> $projectName"
 Write-Output "Addon Prefix -> $addonPrefix"
 
+$whereIam = Get-Location
+Write-Output "Where I am -> $whereIam"
+
 $changedStuff = git diff --stat $beforeCommit $afterCommit
 Write-Output "Changed stuff -> $changedStuff"
 $changedFiles = git diff --name-only $beforeCommit $afterCommit
