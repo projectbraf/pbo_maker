@@ -21,6 +21,10 @@ jobs:
         run: pwd
         shell: pwsh
 
+      - name: Print Directory Content
+        run: pwd
+        shell: pwsh
+
       - name: Test PBO Maker action
         uses: ./
         with:
