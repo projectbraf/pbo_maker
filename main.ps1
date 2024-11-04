@@ -11,7 +11,7 @@ $changedStuff = git diff --stat $beforeCommit $afterCommit
 Write-Output "Changed stuff -> $changedStuff"
 $changedFiles = git diff --name-only $beforeCommit $afterCommit
 if ($changedFiles.Length -eq 0) {
-  Write-Output "No changed files"
+  Write-Output "ERROR: No changed files were found. Aborting."
 
   exit 1
 }
