@@ -4,6 +4,9 @@ Write-Output "After Event Commit -> $afterEventCommit"
 Write-Output "Build Tool -> $build_tool"
 Write-Output "Private Key -> $private_key"
 
+Write-Output "Project Name -> $projectName"
+Write-Output "Addon Prefix -> $addonPrefix"
+
 $changedFiles = git diff --name-only $beforeCommit $afterCommit
 Write-Output "Changed Files: $changedFiles"
 $changedDirs = $changedFiles | ForEach-Object { $_.Split('/')[0] } | Select-Object -Unique
