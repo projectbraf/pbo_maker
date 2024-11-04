@@ -15,7 +15,7 @@ Write-Output "Changed Folders: $changedDirs"
 $symlinkPath = "P:\$projectName"
 
 if (Test-Path "P:\$projectName" -PathType Leaf) {
-    Remove-Item $symlinkPath -Force
+  Remove-Item $symlinkPath -Force
 }
 
 if (Test-Path $symlinkPath -PathType Container) {
@@ -26,8 +26,6 @@ New-Item -ItemType SymbolicLink -Path "$symlinkPath" -Target .
 
 $changedDirs | ForEach-Object {
   $folder = $_
-  if ($folder -like "$addonPrefix*") {
-    $packedDir = "$symlinkPath\${folder}"
-    Write-Output "Packing Folder: $packedDir"
-  }
+  $packedDir = "$symlinkPath\${folder}"
+  Write-Output "Packing Folder: $packedDir"
 };
