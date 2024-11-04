@@ -10,6 +10,8 @@ runs:
         $afterEventCommit = "${{ github.event.after }}"
         $build_tool = "${{ inputs.build_tool }}"
         $private_key = "${{ inputs.private_key }}"
+        $projectName = "${{ github.event.repository.name }}"
+        $addonPrefix = "${{ inputs.addon_prefix }}"
         .\main.ps1
       shell: pwsh
 
@@ -21,3 +23,6 @@ inputs:
   private_key:
     description: "Private key to sign the PBO"
     required: true
+  addon_prefix:
+    description: "Addon prefix"
+    required: false
