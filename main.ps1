@@ -1,5 +1,7 @@
-Write-Output "Before Event Commit -> $beforeEventCommit"
-Write-Output "After Event Commit -> $afterEventCommit"
+$showedBeforeEventCommit = git show $beforeCommit
+Write-Output "Before Event Commit -> $showedBeforeEventCommit"
+$showedAfterEventCommit = git show $afterCommit
+Write-Output "After Event Commit -> $showedAfterEventCommit"
 
 Write-Output "Build Tool -> $build_tool"
 Write-Output "Private Key -> $private_key"
