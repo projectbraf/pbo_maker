@@ -1,6 +1,6 @@
-$showedBeforeEventCommit = git show $beforeCommit
+$showedBeforeEventCommit = git show --format=short $beforeCommit
 Write-Output "Before Event Commit -> $showedBeforeEventCommit"
-$showedAfterEventCommit = git show $afterCommit
+$showedAfterEventCommit = git show --format=short $afterCommit
 Write-Output "After Event Commit -> $showedAfterEventCommit"
 
 Write-Output "Build Tool -> $build_tool"
