@@ -48,7 +48,7 @@ runs:
         }
 
         Write-Output "Creating symlink: $symlinkPath"
-        New-Item -ItemType SymbolicLink -Path "$symlinkPath\" -Target $whereIam
+        $symlinkLink = New-Item -ItemType SymbolicLink -Path "$symlinkPath\" -Target $whereIam
 
         $changedDirs | ForEach-Object {
           $folder = $_
