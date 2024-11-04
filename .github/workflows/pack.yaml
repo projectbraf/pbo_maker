@@ -17,6 +17,10 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Print Working Directory
+        run: pwd
+        shell: pwsh
+
       - name: Test PBO Maker action
         uses: ./
         with:
