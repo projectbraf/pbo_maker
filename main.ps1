@@ -8,6 +8,11 @@ Write-Output "Project Name -> $projectName"
 Write-Output "Addon Prefix -> $addonPrefix"
 
 $changedFiles = git diff --name-only $beforeCommit $afterCommit
+if ($changedFiles.Length -eq 0) {
+  Write-Output "No changed files"
+
+  exit 1
+}
 Write-Output "Changed Files: $changedFiles"
 $changedDirs = $changedFiles | ForEach-Object { $_.Split('/')[0] } | Select-Object -Unique
 Write-Output "Changed Folders: $changedDirs"
