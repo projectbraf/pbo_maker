@@ -35,7 +35,7 @@ if (Test-Path $symlinkPath -PathType Container) {
 }
 
 Write-Output "Creating symlink: $symlinkPath"
-New-Item -ItemType SymbolicLink -Path "$symlinkPath" -Target .
+New-Item -ItemType SymbolicLink -Path "$symlinkPath\" -Target .
 
 $changedDirs | ForEach-Object {
   $folder = $_
