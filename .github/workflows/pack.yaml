@@ -22,7 +22,7 @@ jobs:
         shell: pwsh
 
       - name: Print Directory Content
-        run: pwd
+        run: ls
         shell: pwsh
 
       - name: Test PBO Maker action
