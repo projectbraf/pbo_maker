@@ -1,7 +1,5 @@
-$showedBeforeEventCommit = git show --format=short $beforeCommit
-Write-Output "Before Event Commit -> $showedBeforeEventCommit"
-$showedAfterEventCommit = git show --format=short $afterCommit
-Write-Output "After Event Commit -> $showedAfterEventCommit"
+Write-Output "Before Event Commit -> $beforeEventCommit"
+Write-Output "After Event Commit -> $afterEventCommit"
 
 Write-Output "Build Tool -> $build_tool"
 Write-Output "Private Key -> $private_key"
@@ -9,7 +7,8 @@ Write-Output "Private Key -> $private_key"
 Write-Output "Project Name -> $projectName"
 Write-Output "Addon Prefix -> $addonPrefix"
 
-Write-Output "Changed stuff -> " + git diff --stat $beforeCommit $afterCommit
+$changedStuff = git diff --stat $beforeCommit $afterCommit
+Write-Output "Changed stuff -> $changedStuff"
 $changedFiles = git diff --name-only $beforeCommit $afterCommit
 if ($changedFiles.Length -eq 0) {
   Write-Output "No changed files"
