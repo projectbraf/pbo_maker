@@ -9,6 +9,7 @@ Write-Output "Private Key -> $private_key"
 Write-Output "Project Name -> $projectName"
 Write-Output "Addon Prefix -> $addonPrefix"
 
+Write-Output "Changed stuff -> " + git diff --stat $beforeCommit $afterCommit
 $changedFiles = git diff --name-only $beforeCommit $afterCommit
 if ($changedFiles.Length -eq 0) {
   Write-Output "No changed files"
