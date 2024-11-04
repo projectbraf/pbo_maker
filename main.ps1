@@ -11,8 +11,12 @@ Write-Output "Changed Folders: $changedDirs"
 
 $symlinkPath = "P:\$projectName"
 
-if (Test-Path $symlinkPath -PathType Leaf -or Test-Path $symlinkPath -PathType Container) {
+if (Test-Path "P:\$projectName" -PathType Leaf) {
     Remove-Item $symlinkPath -Force
+}
+
+if (Test-Path $symlinkPath -PathType Container) {
+  Remove-Item $symlinkPath -Force
 }
 
 New-Item -ItemType SymbolicLink -Path "$symlinkPath" -Target .
