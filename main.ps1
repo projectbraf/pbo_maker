@@ -16,12 +16,12 @@ $symlinkPath = "P:\$projectName"
 
 if (Test-Path "P:\$projectName" -PathType Leaf) {
   Remove-Item $symlinkPath -Force
-  Write-Output "Removing previous symlink: $symlinkPath"
+  Write-Output "Removing previous leaf symlink: $symlinkPath"
 }
 
 if (Test-Path $symlinkPath -PathType Container) {
   Remove-Item $symlinkPath -Force
-  Write-Output "Removing previous symlink: $symlinkPath"
+  Write-Output "Removing previous container symlink: $symlinkPath"
 }
 
 Write-Output "Creating symlink: $symlinkPath"
