@@ -12,7 +12,6 @@ runs:
         $private_key = "${{ inputs.private_key }}"
         $projectName = "${{ github.event.repository.name }}"
         $addonPrefix = "${{ inputs.addon_prefix }}"
-        chmod +x main.ps1
         .\main.ps1
       shell: pwsh
 

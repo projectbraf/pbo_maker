@@ -8,22 +8,10 @@ jobs:
     runs-on: windows
 
     steps:
-      - name: Set Working Directory
-        run: cd ${{ github.workspace }}
-        shell: pwsh
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-
-      - name: Print Working Directory
-        run: pwd
-        shell: pwsh
-
-      - name: Print Directory Content
-        run: ls
-        shell: pwsh
 
       - name: Test PBO Maker action
         uses: ./
