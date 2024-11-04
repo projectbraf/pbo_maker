@@ -10,5 +10,3 @@ class CfgPatches {
     requiredVersion = 0.1;
   };
 };
-
-class CfgWeapons{};
