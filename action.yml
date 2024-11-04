@@ -6,10 +6,18 @@ runs:
   steps:
     - name: Install Mikero Tools
       run: |
-        echo "${{ inputs.message }}"
+        $beforeEventCommit = "${{ github.event.before }}"
+        $afterEventCommit = "${{ github.event.after }}"
+        $build_tool = "${{ inputs.build_tool }}"
+        $private_key = "${{ inputs.private_key }}"
+        .\main.ps1
       shell: pwsh
 
 inputs:
-  message:
-    description: "Message to greet"
+  build_tool:
+    description: "Build tool to pack the PBO"
+    required: false
+    default: "pboproject"
+  private_key:
+    description: "Private key to sign the PBO"
     required: true
