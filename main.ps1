@@ -40,3 +40,8 @@ $changedDirs | ForEach-Object {
   $packedDir = "$symlinkPath\${folder}"
   Write-Output "Packing Folder: $packedDir"
 };
+
+if (Test-Path $symlinkPath -PathType Container) {
+  Remove-Item $symlinkPath -Force
+  Write-Output "Removing previous container symlink: $symlinkPath"
+}
