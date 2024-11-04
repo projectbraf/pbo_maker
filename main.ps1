@@ -3,3 +3,5 @@ Write-Output "After Event Commit -> $afterEventCommit"
 
 Write-Output "Build Tool -> $build_tool"
 Write-Output "Private Key -> $private_key"
+
+python main.py $beforeEventCommit $afterEventCommit $build_tool $private_key
