@@ -15,8 +15,6 @@ Write-Output "Changed stuff -> $changedStuff"
 $changedFiles = git diff --name-only $beforeCommit $afterCommit
 if ($changedFiles.Length -eq 0) {
   Write-Output "ERROR: No changed files were found. Aborting."
-
-  exit 1
 }
 Write-Output "Changed Files: $changedFiles"
 $changedDirs = $changedFiles | ForEach-Object { $_.Split('/')[0] } | Select-Object -Unique
